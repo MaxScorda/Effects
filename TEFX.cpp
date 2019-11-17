@@ -5,15 +5,16 @@ TEFX::TEFX(String _Stringa, int _lenScroll) {
   Stringa = _Stringa;
   lenScroll = _lenScroll;
   ppos = 0;
-  stToPrnt = padD("",lenScroll," ");
+  stToPrnt = padD("", lenScroll, " ");
 }
 
 
 String TEFX::ScrollT(int stepS) {
-  //se la stringa e' dispari, un giro si e uno no, salta all'inizio un carattere nel caso in cui steps=2
-  ppos = (ppos+Stringa.length()) % Stringa.length();
-  stToPrnt = stToPrnt.substring(stepS) + padD(Stringa.substring(ppos ,ppos + stepS ),stepS," ");
-  ppos=ppos+stepS;
+  //se la stringa e' dispari aggiunge un blank per pareggiare e riparte col contatore
+  if (ppos > Stringa.length()) ppos = 0;
+  ppos = (ppos + Stringa.length()) % Stringa.length();
+  stToPrnt = stToPrnt.substring(stepS) + padD(Stringa.substring(ppos , ppos + stepS ), stepS, " ");
+  ppos = ppos + stepS;
   return stToPrnt;
 }
 
@@ -25,16 +26,16 @@ String TEFX::ScrollT() {
 
 
 void TEFX::NewString(String newstring) {
-  Stringa=newstring;
+  Stringa = newstring;
   ppos = 0;
-  stToPrnt = padD("",lenScroll," ");
+  stToPrnt = padD("", lenScroll, " ");
 }
 
 
 void TEFX::NewLen(int newlen) {
-  lenScroll=newlen;
+  lenScroll = newlen;
   ppos = 0;
-  stToPrnt = padD("",lenScroll," ");
+  stToPrnt = padD("", lenScroll, " ");
 }
 
 
