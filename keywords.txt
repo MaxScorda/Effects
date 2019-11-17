@@ -1,0 +1,9 @@
+#######################################
+# Syntax Coloring Map For EXTMEM
+#######################################
+
+TEFX KEYWORD1
+
+ScrollT		KEYWORD2
+NewString	KEYWORD2
+NewLen		KEYWORD2
