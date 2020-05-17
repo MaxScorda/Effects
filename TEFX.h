@@ -1,5 +1,5 @@
-#ifndef IOINT_H
-#define IOINT_H
+#ifndef TEFX_H
+#define TEFX_H
 #if (ARDUINO <  100)
 #include <WProgram.h>
 #else
